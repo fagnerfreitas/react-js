@@ -72,10 +72,8 @@ class Home extends Component {
                     <option value="Santa Luzia">Santa Luzia</option>
                 </select>
 
-
                 <Users users={this.props.users} />
-  
-
+                
             </div>
         )
     }
