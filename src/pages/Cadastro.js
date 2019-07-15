@@ -12,13 +12,20 @@ export default class extends Component {
         this.state = {
             nome: '',
             email: '',
-            pass: ''
+            pass: '',
+            alert: false,
+            msg:'',
+            typeMsg:''
         }
 
         this.setNome = this.setNome.bind(this);
         this.setEmail = this.setEmail.bind(this);
         this.setsenha = this.setsenha.bind(this);
         this.inserirDados = this.inserirDados.bind(this);
+    }
+
+    componentWillMount(){
+
     }
 
     setNome(e) {
@@ -53,20 +60,26 @@ export default class extends Component {
             .then(res => res.json())
             .then((result) => {
 
+                debugger;
+
       
-                if (result.error != '') {
+                if (result.error == '') {
 
-                    alert(result.error);
-
-                } else {
-
-                    alert('tudo certo');
-
+                    this.setState({alert:true,msg:'Inserido com sucesso' ,typeMsg:true});
+                    
                     this.setState({
                         nome: '',
                         email: '',
                         pass: ''
                     });
+
+                } else {
+
+              
+                    this.setState({alert:true, msg:result.error , typeMsg:false})
+
+                   
+
                 }
 
                 // this.props.editUsers(result)
@@ -96,7 +109,10 @@ export default class extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <Alert />
+                           
+                            {this.state.alert &&  <Alert success={this.state.typeMsg} msg={this.state.msg} />}
+
+
                             {/* <form> */}
                             <div className="form-group">
                                 <label >Nome</label>
