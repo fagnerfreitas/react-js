@@ -14,8 +14,8 @@ export default class extends Component {
             email: '',
             pass: '',
             alert: false,
-            msg:'',
-            typeMsg:''
+            msg: '',
+            typeMsg: ''
         }
 
         this.setNome = this.setNome.bind(this);
@@ -24,7 +24,7 @@ export default class extends Component {
         this.inserirDados = this.inserirDados.bind(this);
     }
 
-    componentWillMount(){
+    componentWillMount() {
 
     }
 
@@ -62,11 +62,11 @@ export default class extends Component {
 
                 debugger;
 
-      
+
                 if (result.error == '') {
 
-                    this.setState({alert:true,msg:'Inserido com sucesso' ,typeMsg:true});
-                    
+                    this.setState({ alert: true, msg: 'Inserido com sucesso', typeMsg: true });
+
                     this.setState({
                         nome: '',
                         email: '',
@@ -74,12 +74,7 @@ export default class extends Component {
                     });
 
                 } else {
-
-              
-                    this.setState({alert:true, msg:result.error , typeMsg:false})
-
-                   
-
+                    this.setState({ alert: true, msg: result.error, typeMsg: false })
                 }
 
                 // this.props.editUsers(result)
@@ -109,8 +104,8 @@ export default class extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                           
-                            {this.state.alert &&  <Alert success={this.state.typeMsg} msg={this.state.msg} />}
+
+                            {this.state.alert && <Alert success={this.state.typeMsg} msg={this.state.msg} />}
 
 
                             {/* <form> */}
@@ -121,7 +116,7 @@ export default class extends Component {
                             </div>
                             <div className="form-group">
                                 <label >E-mail</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" onChange={this.setEmail}   value={this.state.email}  aria-describedby="emailHelp" placeholder="Seu email" />
+                                <input type="email" className="form-control" id="exampleInputEmail1" onChange={this.setEmail} value={this.state.email} aria-describedby="emailHelp" placeholder="Seu email" />
                                 {/* <small id="emailHelp" className="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small> */}
                             </div>
                             {/* <div className="form-group form-check">
@@ -130,12 +125,13 @@ export default class extends Component {
                                 </div> */}
                             <div className="form-group">
                                 <label >Senha</label>
-                                <input type="password" className="form-control" onChange={this.setsenha}  value={this.state.pass}  id="exampleInputPassword1" placeholder="Senha" />
+                                <input type="password" className="form-control" onChange={this.setsenha} value={this.state.pass} id="exampleInputPassword1" placeholder="Senha" />
                             </div>
                             <button type="buttom" className="btn btn-primary" onClick={this.inserirDados}>Enviar</button>
                             {/* </form> */}
                         </div>
                     </div>
+                    
                 </div>
             </div>
         )
