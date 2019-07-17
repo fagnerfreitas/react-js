@@ -41,7 +41,7 @@ class Home extends Component {
                 //  'Content-Type':'application/x-www-form-urlencoded',
             },
             
-              mode:'no-cors',
+              mode:'cors',
             // cache: 'default' ,
         })
             .then(res => res.json())
