@@ -30,14 +30,14 @@ class Home extends Component {
        // https://www.imoview.com.br/api/Imovel/RetornarImoveisDisponiveis?parametros={"finalidade":"0"}
   
 
-     fetch("http://localhost:8080/api/users/getAll/", {
+     fetch('https://www.imoview.com.br/api/Imovel/RetornarImoveisDisponiveis?parametros={"finalidade":"1","numeroPagina":"1","numeroRegistros":"20"}', {
             method: 'GET',
             headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
         
-                // Chave:'s71hZU+NeG628HSV9IpUaWMYg4X0qHw864RVUGPEexI=',
-                'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZF91c2VyIjoxMjMsIm5vbWUiOiJGYWduZXIgSGVucmlxdWUifQ.hLC7dTxp19xo202SWuBzEeNxh7fAAphvCNlUTUMRgJU',
+                Chave:'s71hZU+NeG628HSV9IpUaWMYg4X0qHw864RVUGPEexI=',
+                //'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZF91c2VyIjoxMjMsIm5vbWUiOiJGYWduZXIgSGVucmlxdWUifQ.hLC7dTxp19xo202SWuBzEeNxh7fAAphvCNlUTUMRgJU',
                 //  'Content-Type':'application/x-www-form-urlencoded',
             },
             
