@@ -30,7 +30,7 @@ class Home extends Component {
        // https://www.imoview.com.br/api/Imovel/RetornarImoveisDisponiveis?parametros={"finalidade":"0"}
   
 
-     fetch('https://www.imoview.com.br/api/Imovel/RetornarImoveisDisponiveis?parametros={"finalidade":"1","numeroPagina":"1","numeroRegistros":"20"}', {
+     fetch("https://www.imoview.com.br/api/Imovel/RetornarImoveisDisponiveis?parametros={'finalidade':'1','numeroPagina':'1','numeroRegistros':'20'}", {
             method: 'GET',
             headers: {
                   'Accept': 'application/json',
